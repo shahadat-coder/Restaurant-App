@@ -21,10 +21,10 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: widget.onTap,
       child: Container(
         width: size.width,
-        padding: const EdgeInsets.symmetric(vertical: 12),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
           color: widget.backgroundColor ?? AppColors.greenColors,
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(15),
         ),
         child:  Center(
           child: Text(
