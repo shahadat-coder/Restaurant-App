@@ -1,11 +1,9 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:resturent_app/screens/bottomSheet/create_account_screen.dart';
+import 'package:resturent_app/screens/bottomSheet/login_screen.dart';
 import 'package:resturent_app/utils/colors.dart';
-import 'package:resturent_app/widgets/bottomSheet/create_account_screen.dart';
-import 'package:resturent_app/widgets/bottomSheet/login_screen.dart';
 
-import '../../utils/colors.dart';
 
 class ButtonsheetWidget extends StatelessWidget {
   const ButtonsheetWidget({
@@ -23,7 +21,7 @@ class ButtonsheetWidget extends StatelessWidget {
               topRight: Radius.circular(20))
       ),
       child: ContainedTabBarView(
-        tabs: [
+        tabs: const [
           Text('Create Account', style: TextStyle(color: Colors.black)),
           Text('Login', style: TextStyle(color: Colors.black))
         ],
@@ -31,7 +29,7 @@ class ButtonsheetWidget extends StatelessWidget {
           CreateAccountScreen(),
           LoginScreen(),
         ],
-        tabBarProperties: TabBarProperties(
+        tabBarProperties: const TabBarProperties(
             indicatorColor: AppColors.greenColors,
             labelColor: AppColors.greenColors,
             unselectedLabelColor: Colors.black,

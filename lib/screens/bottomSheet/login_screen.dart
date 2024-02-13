@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:resturent_app/screens/password/forget_password.dart';
 import 'package:resturent_app/utils/colors.dart';
 import 'package:resturent_app/widgets/custom_button.dart';
 import 'package:resturent_app/widgets/social_button.dart';
@@ -49,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Text(
                   'Email Address',
                   style: TextStyle(
@@ -69,21 +70,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'Eg namaemail@emailkamu.com',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.black87, // Change border color here
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.black87, // Change border color here
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 8,),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const SizedBox(height: 8,),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Text(
                   'Password',
                   style: TextStyle(
@@ -95,6 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10,),
               TextFormField(
+                obscureText: true,
                 controller: _passController,
                 validator: _validatePassword,
                 keyboardType: TextInputType.visiblePassword,
@@ -102,13 +104,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'Enter the password',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.black87, // Change border color here
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.black87, // Change border color here
                     ),
                   ),
@@ -116,7 +118,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Align(
                 alignment: Alignment.centerRight,
-                child: TextButton(onPressed: (){},
+                child: TextButton(onPressed: (){
+                  Get.to(const ForgetPasswordScreen());
+                },
                     child: const Text('Forget Password?',
                       style: TextStyle(
                         fontSize: 13,

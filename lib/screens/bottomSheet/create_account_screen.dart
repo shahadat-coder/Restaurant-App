@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:resturent_app/utils/colors.dart';
 import 'package:resturent_app/widgets/custom_button.dart';
 import 'package:resturent_app/widgets/social_button.dart';
+
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -49,8 +49,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Text(
                   'Full Name',
                   style: TextStyle(
@@ -128,6 +128,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               const SizedBox(height: 10,),
               TextFormField(
                 controller: _passController,
+                 obscureText: true,
                  validator: _validatePassword,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(

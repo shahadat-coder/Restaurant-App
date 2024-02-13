@@ -8,6 +8,10 @@ class SmallText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text( text,
+      style: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+      ),
       textAlign: TextAlign.center,
     );
   }
