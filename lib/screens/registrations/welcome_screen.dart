@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:resturent_app/screens/bottomSheet/buttonsheet_widget.dart';
+import 'package:resturent_app/screens/bottomSheet/login_screen.dart';
 import 'package:resturent_app/utils/colors.dart';
 import 'package:resturent_app/widgets/bolt_title.dart';
 import 'package:resturent_app/widgets/custom_button.dart';
@@ -40,7 +41,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   onTap: () {
                     Get.bottomSheet(
                       const ButtonsheetWidget(),
+                      isScrollControlled: true,
                     );
+
                   }),
             ),
             const SizedBox(
@@ -53,6 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   titleColor: AppColors.greenColors,
                   backgroundColor: AppColors.greenColors.withOpacity(0.2),
                   onTap: () {
+                    const ButtonsheetWidget();
                   }),
             ),
             const SizedBox(height: 15),

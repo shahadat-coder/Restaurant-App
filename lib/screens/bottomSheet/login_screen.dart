@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:resturent_app/screens/main_screen/bottom_nav.dart';
 import 'package:resturent_app/screens/password/forget_password.dart';
 import 'package:resturent_app/utils/colors.dart';
 import 'package:resturent_app/widgets/custom_button.dart';
@@ -131,13 +132,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 child: CustomButton(
                   title: 'Login',
-                  onTap:  _submitForm,
+                  onTap: () {
+                    _submitForm(); // Correct the function call
+                    Get.to(const BottomNavBaseScreen());
+                  },
                 ),
-
               ),
+
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 8),
                   child: SocialButton(title: 'Sign up with google', onTap: () {},
