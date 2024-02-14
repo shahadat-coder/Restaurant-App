@@ -32,7 +32,7 @@ class _UserScreenState extends State<UserScreen> {
                         backgroundImage: NetworkImage(
                             'https://lh3.googleusercontent.com/a/ACg8ocKy6t0yLrXhbbgFWWp8-60DpE9aG26R9kJkXAGD8Hc6Dg=s288-c-no'),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Column(
@@ -75,7 +75,7 @@ class _UserScreenState extends State<UserScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -88,10 +88,10 @@ class _UserScreenState extends State<UserScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(children: [
                       Image.asset('assets/images/profile.png'),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
-                      Text(
+                      const Text(
                         ('Account setting'),
                         maxLines: 1,
                         style: TextStyle(
@@ -100,7 +100,7 @@ class _UserScreenState extends State<UserScreen> {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 70,
                       ),
                       InkWell(
@@ -115,8 +115,8 @@ class _UserScreenState extends State<UserScreen> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: UserCart(),
                   )),
               const SizedBox(height: 15,),

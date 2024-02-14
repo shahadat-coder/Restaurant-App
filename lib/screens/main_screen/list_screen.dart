@@ -21,11 +21,11 @@ class _ListScreenState extends State<ListScreen> {
           Container(
             width: double.infinity,
             height: 80,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
               color: AppColors.greenColors,
             ),
-            child: Center(
+            child: const Center(
               child: Text('Booking History',style: TextStyle(
                 color:  Colors.white,
                 fontSize: 17,
@@ -60,14 +60,14 @@ class _ListScreenState extends State<ListScreen> {
                                 child: Image.network(list[index].UrlImage,fit: BoxFit.fill,),
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   ("${list[index].name}"),
                                   maxLines: 1,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 17,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black,
@@ -75,7 +75,7 @@ class _ListScreenState extends State<ListScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.location_on,size: 15,color: AppColors.greenColors,),
+                                    const Icon(Icons.location_on,size: 15,color: AppColors.greenColors,),
                                     Text(
                                       ("${list[index].subtitle}"),
                                       maxLines: 2,
@@ -85,7 +85,7 @@ class _ListScreenState extends State<ListScreen> {
                                         color: Colors.grey[600],
                                       ),
                                     ),
-                                    SizedBox(width: 15,),
+                                    const SizedBox(width: 15,),
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
@@ -93,9 +93,9 @@ class _ListScreenState extends State<ListScreen> {
                                           borderRadius: BorderRadius.circular(10.0),
                                         ),
                                         primary: AppColors.greenColors,
-                                        minimumSize: Size(50, 30),
+                                        minimumSize: const Size(50, 30),
                                       ),
-                                      child: Text('Check', style: TextStyle(fontSize: 12,color: Colors.white)),
+                                      child: const Text('Check', style: TextStyle(fontSize: 12,color: Colors.white)),
                                     )
                                   ],
                                 ),
@@ -108,7 +108,7 @@ class _ListScreenState extends State<ListScreen> {
                   ),
                 );
               }),
-             SizedBox(height: 15,),
+             const SizedBox(height: 15,),
              InkWell(
                onTap: (){},
                child: Row(

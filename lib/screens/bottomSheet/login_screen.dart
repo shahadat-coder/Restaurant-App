@@ -5,6 +5,7 @@ import 'package:resturent_app/screens/password/forget_password.dart';
 import 'package:resturent_app/utils/colors.dart';
 import 'package:resturent_app/widgets/custom_button.dart';
 import 'package:resturent_app/widgets/social_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -18,6 +19,22 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
 
+  String email = '';
+  String pass = '';
+
+  String validPass = '';
+  String validUser = '';
+
+  getUsernamePassword () {
+    SharedPreferences.getInstance().then((value) {
+      setState(() {
+        validUser = value.getString('email') ?? '';
+        validPass = value.getString('password') ?? '';
+      });
+
+      print('Valid user $validUser\nValid password $validPass');
+    });
+  }
 
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -39,7 +56,26 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _submitForm() {
     if (globalkey.currentState!.validate()) {
+      if (_emailController.text != validUser) {
+        Get.snackbar('Invalid email', 'The email you entered is invalid');
+        return;
+      }
+
+      if (_passController.text != validPass) {
+        Get.snackbar('Invalid password', 'Account password is incorrect, Try again!');
+        return;
+      }
+
+      // Everything is correct now navigate to home
+      Get.to(const BottomNavBaseScreen());
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUsernamePassword();
   }
   @override
   Widget build(BuildContext context) {
@@ -64,6 +100,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10,),
               TextFormField(
+                onChanged: (value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
                 controller: _emailController,
                 validator: _validateEmail,
                 keyboardType: TextInputType.emailAddress,
@@ -97,6 +138,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10,),
               TextFormField(
+                onChanged: (value) {
+                  setState(() {
+                    pass = value;
+                  });
+                },
                 obscureText: true,
                 controller: _passController,
                 validator: _validatePassword,
@@ -135,10 +181,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 child: CustomButton(
                   title: 'Login',
-                  onTap: () {
-                    _submitForm(); // Correct the function call
-                    Get.to(const BottomNavBaseScreen());
-                  },
+                  onTap: email.isEmpty || email.isEmpty || pass.isEmpty
+                  ? null : _submitForm,
+                  backgroundColor:
+                  email.isEmpty || email.isEmpty || pass.isEmpty
+                      ? AppColors.greenColors.withOpacity(.2)
+                      : AppColors.greenColors,
                 ),
               ),
 

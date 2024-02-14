@@ -1,7 +1,7 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:resturent_app/screens/bottomSheet/create_account_screen.dart';
+import 'package:resturent_app/screens/auth/create_account_screen.dart';
 import 'package:resturent_app/screens/bottomSheet/login_screen.dart';
 import 'package:resturent_app/utils/colors.dart';
 

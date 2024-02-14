@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:resturent_app/utils/colors.dart';
 
 class CustomButton extends StatefulWidget {
-  const CustomButton({Key? key, required this.title, required this.onTap, this.backgroundColor, this.titleColor}) : super(key: key);
+  const CustomButton({Key? key, required this.title, this.onTap, this.backgroundColor, this.titleColor}) : super(key: key);
 
   final String title;
-  final void Function() onTap;
+  final void Function()? onTap;
   final Color? backgroundColor;
   final Color? titleColor;
 

@@ -10,15 +10,15 @@ class UserCart extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset('assets/images/translate.png'),
-              SizedBox(
+              const SizedBox(
                 width: 25,
               ),
-              Text(
+              const Text(
                 ('Language'),
                 maxLines: 1,
                 style: TextStyle(
@@ -27,22 +27,22 @@ class UserCart extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 150,
               ),
               InkWell(
                 onTap: () {},
                 child: Icon(Icons.arrow_forward_ios_rounded,size: 20,color: Colors.grey.shade500,),)
             ]),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset('assets/images/feed.png'),
-              SizedBox(
+              const SizedBox(
                 width: 25,
               ),
-              Text(
+              const Text(
                 ('Feedback'),
                 maxLines: 1,
                 style: TextStyle(
@@ -51,22 +51,22 @@ class UserCart extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 150,
               ),
               InkWell(
                 onTap: () {},
                 child: Icon(Icons.arrow_forward_ios_rounded,size: 20,color: Colors.grey.shade500,),)
             ]),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset('assets/images/star.png'),
-              SizedBox(
+              const SizedBox(
                 width: 25,
               ),
-              Text(
+              const Text(
                 ('Rating us'),
                 maxLines: 1,
                 style: TextStyle(
@@ -75,22 +75,22 @@ class UserCart extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 150,
               ),
               InkWell(
                 onTap: () {},
                 child: Icon(Icons.arrow_forward_ios_rounded,size: 20,color: Colors.grey.shade500,),)
             ]),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset('assets/images/vision.png'),
-              SizedBox(
+              const SizedBox(
                 width: 25,
               ),
-              Text(
+              const Text(
                 ('New Version'),
                 maxLines: 1,
                 style: TextStyle(
@@ -99,7 +99,7 @@ class UserCart extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 130,
               ),
               InkWell(
