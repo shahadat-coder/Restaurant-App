@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:resturent_app/models/List_model.dart';
 import 'package:resturent_app/widgets/home/arivable_row.dart';
 import 'package:resturent_app/widgets/home/booking_row.dart';
+import 'package:resturent_app/widgets/home/item_cart.dart';
+import 'package:resturent_app/widgets/home/item_list.dart';
 import 'package:resturent_app/widgets/home/search_widget.dart';
 import '../../models/home_model.dart';
 import '../../utils/colors.dart';
@@ -18,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.list)),
         title: const Row(
@@ -40,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -61,142 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 20,),
         SizedBox(
           height: 175,
-          child: ListView.builder(
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemCount: carts.length,
-            itemBuilder: (BuildContext context, int index) {
-              return  Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                child: SizedBox(
-                  width: 150,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8),
-                          ),
-                          image: DecorationImage(
-                            image: NetworkImage(carts[index].UrlImage),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              ("${carts[index].name}"),
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text(
-                            ("${carts[index].subtitle}"),
-                                maxLines: 2,
-                                style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey[600],
-                            ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              );
-            },
-          ),
+          child: ItemCart(),
         ),
             SizedBox(height: 30,),
             BookingRow(),
             SizedBox(height: 15,),
-            ListView.builder(
-                shrinkWrap: true,
-                 itemCount: list.length,
-                itemBuilder: (context,index){
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Image.network(list[index].UrlImage,fit: BoxFit.fill,),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  ("${list[index].name}"),
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 2,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      ("${list[index].subtitle}"),
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.grey[600],
-                                      ),
-                                    ),
-                                    SizedBox(width: 15,),
-                                    ElevatedButton(
-                                      onPressed: () {},
-                                      style: ElevatedButton.styleFrom(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(10.0),
-                                        ),
-                                        primary: AppColors.greenColors,
-                                        minimumSize: Size(50, 30),
-                                      ),
-                                      child: Text('Book', style: TextStyle(fontSize: 12,color: Colors.white)),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                })
+            ItemList(),
 
           ],
         ),
@@ -204,3 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+
+

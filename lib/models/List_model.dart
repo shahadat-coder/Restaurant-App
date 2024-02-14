@@ -8,7 +8,7 @@ class ListModel {
 
 final List<ListModel> list = [
   ListModel(
-      name: "Ambrosia Hotel & Restaurant",
+      name: "Ambrosia Hotel",
       subtitle: "kazi Deiry, Taiger Chittagong",
       UrlImage:
       "https://b.zmtcdn.com/data/pictures/7/110007/0d610550525b4c40c52b14e76499e62b.jpg?"),

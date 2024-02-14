@@ -30,7 +30,7 @@ class _CustomButtonState extends State<CustomButton> {
           child: Text(
             widget.title,
             style:  TextStyle(
-              color:widget.titleColor ?? AppColors.blackColors,
+              color:widget.titleColor ?? Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),

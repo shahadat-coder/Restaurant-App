@@ -48,7 +48,7 @@ class _BottomNavBaseScreenState extends State<BottomNavBaseScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Cart',
+            label: 'Profile',
           ),
         ],
       ),
