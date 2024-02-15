@@ -54,9 +54,7 @@ class ItemList extends StatelessWidget {
                         Row(
                           children: [
                             InkWell(onTap: (){
-                              Get.to( GoogleMap(initialCameraPosition: CameraPosition(
-                                  target: LatLng(23.746707979905455, 90.42392040352738)
-                              ),));
+                              Get.to(() => const GoogleMapScreen());
                                 },child: const Icon(Icons.location_on,size: 15,color: AppColors.greenColors,)),
                             const SizedBox(width: 5,),
                             Text(
