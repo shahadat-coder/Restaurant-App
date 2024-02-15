@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:resturent_app/googleMap/google_,ap.dart';
 import 'package:resturent_app/models/List_model.dart';
 import 'package:resturent_app/utils/colors.dart';
 
@@ -49,7 +53,12 @@ class ItemList extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const Icon(Icons.location_on,size: 15,color: AppColors.greenColors,),
+                            InkWell(onTap: (){
+                              Get.to( GoogleMap(initialCameraPosition: CameraPosition(
+                                  target: LatLng(23.746707979905455, 90.42392040352738)
+                              ),));
+                                },child: const Icon(Icons.location_on,size: 15,color: AppColors.greenColors,)),
+                            const SizedBox(width: 5,),
                             Text(
                               ("${list[index].subtitle}"),
                               maxLines: 2,
